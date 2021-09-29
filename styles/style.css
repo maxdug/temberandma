@@ -1,0 +1,789 @@
+/* --------------------------------------------------------
+ 		 dP""b8  88       dP"Yb   88""Yb     db     88
+		dP   `"  88      dP   Yb  88__dP    dPYb    88
+		Yb  "88  88  .o  Yb   dP  88""Yb   dP__Yb   88  .o
+ 		 YboodP  88ood8   YbodP   88oodP  dP""""Yb  88ood8
+----------------------------------------------------------- */
+
+* {
+  padding: 0;
+  margin: 0;
+} /* Used as a reset for everything ever */
+
+html {
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  display: flex;
+  height: calc(100vh - 60px);
+  flex-direction: column;
+  margin: 60px 0 0;
+  color: var(--MediumDark);
+  font-family: sans-serif;
+}
+
+:root {
+  --Negative: tomato; /*  */
+  --Positive: limegreen; /*  */
+  --Active: DodgerBlue; /*  */
+  --Secondary: DodgerBlue; /* Hover states */
+  --Tertiary: DeepPink; /*  */
+  --ExtraLight: #eee; /* Backgrounds */
+  --TransExtraLight: rgb(230, 230, 230, 0.75); /* Backgrounds */
+  --Light: #ccc; /* Backgrounds */
+  --MediumLight: #999; /* Text Links, */
+  --MediumDark: #666; /* Paragraph Text,  */
+  --Dark: #333; /*  */
+}
+
+a {
+  color: var(--MediumLight);
+  text-decoration: underline;
+}
+a:hover {
+  color: var(--Secondary);
+  text-decoration: none;
+}
+a img {
+  border-width: 0;
+}
+p {
+  font-size: 15px;
+  margin: 0 0 10px 0;
+  letter-spacing: .05em;
+  line-height: 1.5em;
+  color: var(--MediumDark);
+  font-weight: lighter;
+}
+hr {
+  height: 1px;
+  border-top: solid 1px var(--MediumLight);
+  border-bottom: none;
+  clear: both;
+}
+b,
+strong {
+  font-weight: 700;
+}
+
+q,
+blockquote {
+  padding: 5% 7% 7% 7%;
+  display: block;
+  clear: both;
+  font-size: 22px;
+}
+ul {
+  list-style: disc;
+  padding: 0 0 0 20px;
+  margin: 0 0 10px 0;
+}
+.ul_ {
+  list-style: none;
+}
+.ul_ li {
+  list-style: none;
+  display: inline;
+}
+ol {
+  list-style: decimal;
+  padding: 0 0 0 20px;
+  margin: 0 0 10px 0;
+}
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+.video iframe,
+.video object,
+.video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.ytp-thumbnail .html5-stop-propagation {
+  background-image: url(http://maxduggan.com/images/blog_bg.jpg) !important;
+  background-color: var(--Light) !important;
+}
+
+.button {
+  text-decoration: none;
+  color: #eee;
+  background: #333;
+  padding: .8em 2em;
+}
+.button:hover {
+  background: black;
+  color: white;
+}
+input, input[type="password"] {
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--Light);
+  border-radius: 0;
+  box-sizing: border-box;
+  margin: 10px 0;
+}
+
+input[type="submit"], input[type="button"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+  background-color: var(--Dark);
+  color: white;
+}
+input[type="submit"]:hover, input[type="button"]:hover {
+  background-color: Black;
+  color: white;
+}
+
+input:focus,
+textarea:focus, input[type="password"]:focus {
+  border-bottom: none;
+  border-right: none;
+  outline: none;
+  background-color: var(--Light);
+}
+
+/* H E A D E R S
+----------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: .1em;
+}
+h1, h1 a {
+  font-size: 15px;
+  margin: 0 0 6px 0;
+  color: var(--Dark);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 18px;
+}
+h1 a:hover {
+  color: Black;
+}
+h2, h2 a {
+  font-size: 12px;
+  margin: 0 0 6px 0;
+  color: var(--Dark);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+h2 a:hover {
+  color: Black;
+}
+
+h3, h3 a {
+  font-size: 30px;
+  margin: 0 0 5px 0;
+  color: var(--Dark);
+  font-weight: 400;
+  line-height: 30px;
+}
+h3 a:hover {
+  color: Black;
+}
+
+/*
+88  88 888888    db    8888b.  888888 88""Yb        dP     888888  dP"Yb   dP"Yb  888888 888888 88""Yb
+88  88 88__     dPYb    8I  Yb 88__   88__dP       dP      88__   dP   Yb dP   Yb   88   88__   88__dP
+888888 88""    dP__Yb   8I  dY 88""   88"Yb       dP       88""   Yb   dP Yb   dP   88   88""   88"Yb
+88  88 888888 dP""""Yb 8888Y"  888888 88  Yb     dP        88      YbodP   YbodP    88   888888 88  Yb
+*/
+header, footer {
+	width: 100%;
+	letter-spacing: .2em;
+	background: var(--ExtraLight);
+	text-transform: uppercase;
+	font-size: .7em;
+	color: var(--MediumDark);
+}
+header {
+	position: fixed;
+	top: 0;
+	z-index: 999;
+}
+footer {
+	justify-self: flex-end;
+}
+header .container, footer .container {
+	display: flex;
+    max-width: 1440px;
+	width: 98%;
+	height: 50px;
+	margin: 0 auto;
+	padding: 0 1%;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#name {
+	flex: 1 0 160px;
+	color: var(--Dark);
+	text-decoration: none;
+	font-size: 1.5em;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  margin-top: 10px;
+}
+#name img {
+  flex: 0 0 50px;
+  margin-right: 10px;
+}
+#name:hover {
+	color: var(--Secondary);
+}
+body.touch #name:hover {
+	color: var(--Secondary);
+}
+
+
+
+
+
+
+
+nav {
+	flex: 0 0 18em;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	text-transform: uppercase;
+  margin-top: 10px;
+}
+nav a {
+	padding-bottom: 3px;
+	color: var(--Dark);
+	text-decoration: none;
+}
+nav a:hover, nav a.sfhover {
+	color: var(--Secondary);
+}
+#design a.work, #blog a.blog, #art a.art, #about a.about {
+	border-bottom: solid 3px var(--Secondary);
+}
+
+.footer-space {
+	flex: 1 0 auto;
+  height: 2px;
+}
+#copyright {
+	flex: 1 0 160px;
+}
+#back-top {
+	text-decoration: none;
+}
+.footer-links {
+    flex: 1 0 160px;
+    display: flex;
+    justify-content: flex-end;
+}
+.footer-links a {
+  width: 20px;
+	margin-left: 2%;
+	text-decoration: none;
+}
+footer svg {
+	max-width: 1.7em;
+	max-height: 1.7em;
+}
+footer a:hover .footerIcon{
+	fill:  var(--Secondary);
+}
+
+a .footerIcon {
+	fill: #444;
+}
+
+body.touch footer a:hover .footerIcon {
+	fill: #444;
+}
+
+/* ---------------------------------------------
+			88  88   dP"Yb   8b    d8  888888
+			88  88  dP   Yb  88b  d88  88__
+			888888  Yb   dP  88YbdP88  88""
+			88  88   YbodP   88 YY 88  888888
+----------------------------------------------- */
+main {
+  max-width: 1440px;
+  width: 98%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  flex: 0 0 auto; /* used for sticky footer */
+}
+.tile {
+  flex: 1 0 calc(25% - 4px);
+  margin: 2px;
+}
+.tile a {
+  display: flex;
+  position: relative;
+  height: 200px;
+  flex-flow: row wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(100%);
+}
+
+.tile a:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+.tile-logo {
+  fill: white;
+}
+.tile {
+  display: block;
+}
+
+.tile svg, .tile img.tile-logo {
+  display: none;
+  max-width: calc(80% - 20px);
+  max-height: calc(60% - 20px);
+  margin: 10px;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.8));
+}
+.tile img.tile-logo {
+  width: auto;
+}
+.tile-logo {
+  display: none;
+  fill: White;
+}
+
+.tile:hover svg,
+.tile:hover .tile-logo {
+  display: block;
+}
+.lock {
+  width: 10px;
+  margin: 0 8px 4px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+.title {
+  color: white;
+  display: inline-block;
+  font-size: .7em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 0 4px 10px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  align-self: flex-end;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+#design a:hover .title {
+  display: none;
+}
+
+
+
+body.touch .title {
+  display: none;
+}
+body.touch .tile:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+body.touch .tile svg,
+body.touch .tile .tile-logo {
+  display: block;
+}
+body.touch .tile a {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  background-size: cover;
+}
+
+#art .title {
+  display: block;
+}
+
+/* ------------------------------------------------------------------
+			88""Yb  88""Yb   dP"Yb    88888  888888   dP""b8  888888
+			88__dP  88__dP  dP   Yb      88  88__    dP   `"    88
+			88"""   88"Yb   Yb   dP  o.  88  88""    Yb         88
+			88      88  Yb   YbodP   "bodP'  888888   YboodP    88
+-------------------------------------------------------------------- */
+
+main.project {
+  max-width: 1440px;
+  width: 98%;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0 0 auto; /* used for sticky footer */
+}
+
+.order-flip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* T E X T
+----------------------------------------------- */
+.full-text {
+  flex-basis: 80%;
+  width: 80%;
+  margin: 30px 10% 10px;
+  text-align: center;
+}
+.half-text {
+  flex-basis: 47%;
+  width: 47%;
+  margin: 1.5%;
+}
+.third-text {
+  flex-basis: 30%;
+  width: 30%;
+  margin: 1.5%;
+}
+
+/* I M A G E S
+----------------------------------------------- */
+.full-tile {
+  flex-basis: calc(100% - 2px);
+  width: calc(100% - 2px);
+  margin: 1px 0;
+}
+.two-thirds-tile {
+  flex-basis: calc(66.6% - 2px);
+  width: calc(66.6% - 2px);
+  margin: 1px 0;
+}
+.half-tile {
+  flex-basis: 49%;
+  width: 49%;
+  margin: 0.5%;
+}
+.third-tile {
+  flex-basis: 32%;
+  width: 32%;
+  margin: 0.5%;
+}
+.fourth-tile {
+  flex-basis: 24%;
+  width: 24%;
+  margin: 0.5%;
+}
+
+/* --------------------------------------------------
+			   db     88""Yb   dP"Yb   88   88  888888
+			  dPYb    88__dP  dP   Yb  88   88    88
+			 dP__Yb   88""Yb  Yb   dP  Y8   8P    88
+			dP""""Yb  88oodP   YbodP   `YbodP'    88
+----------------------------------------------------- */
+#about_max {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 350px;
+  background: url(/about/max-duggan.jpg) 100% 0 no-repeat;
+  line-height: 22px;
+  font-size: 14px;
+  text-align: center;
+}
+#about_max a {
+  color: #333;
+}
+#blurb-one {
+  flex-basis: 100%;
+  padding: 6% 30% 6% 4%;
+  color: var(--Dark);
+}
+#resume {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#resume h1 {
+  flex-basis: 100%;
+  width: 100%;
+  margin: 20px 0;
+  font-size: 50px;
+  text-align: center;
+  color: #777;
+  letter-spacing: 0.4em;
+  line-height: normal;
+  text-indent: 0.7em;
+}
+.item {
+  flex-basis: 30%;
+  padding: 0 10% 40px;
+}
+#resume h2 {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  color: var(--MediumDark);
+}
+#resume h3 {
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0 0 2px 0;
+  text-align: center;
+  color: var(--MediumLight);
+}
+#resume h4 {
+  font-size: 13px;
+  text-align: center;
+  color: var(--MediumDark);
+}
+
+/* TABLES */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+/* Style table headers and table data */
+th,
+td {
+  text-align: center;
+  padding: 16px;
+}
+
+th:first-child,
+td:first-child {
+  text-align: left;
+}
+
+/* Zebra-striped table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
+}
+
+/* ---------------------------------------------------------
+				888888    db     88""Yb  88      888888  888888
+				  88     dPYb    88__dP  88      88__      88
+				  88    dP__Yb   88""Yb  88  .o  88""      88
+				  88   dP""""Yb  88oodP  88ood8  888888    88
+------------------------------------------------------------ */
+.tablet_only {
+  display: none;
+}
+
+@media (max-width: 980px) and (min-width: 601px) {
+  .tablet_only {
+    display: block;
+  }
+
+
+/* Header & Footer */
+footer .container {
+  height: 70px;
+}
+
+nav {
+  flex-grow: 1;
+  justify-content: space-around;
+}
+#copyright {
+  flex: 1 0 80px;
+  text-align: center;
+}
+#back-top {
+  flex: 1 0 160px;
+  text-align: center;
+  order: 1;
+}
+.footer-links {
+  justify-content: center;
+}
+
+  /* H O M E
+----------------------------------------------- */
+  .tile {
+    flex-basis: calc(33.33% - 4px);
+  }
+
+  /* P R O J E C T
+----------------------------------------------- */
+
+  /* A B O U T
+----------------------------------------------- */
+  #about_max {
+    background-position: 87% 0;
+    font-size: 13px;
+  }
+  #blurb-one {
+    padding: 7% 30% 7% 4%;
+  }
+  #resume h1 {
+    font-size: 45px;
+  }
+}
+
+/* ------------------------------------------------------------
+				8b    d8   dP"Yb   88""Yb  88  88      888888
+				88b  d88  dP   Yb  88__dP  88  88      88__
+				88YbdP88  Yb   dP  88""Yb  88  88  .o  88""
+				88 YY 88   YbodP   88oodP  88  88ood8  888888
+--------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .tablet_only {
+    display: none;
+  }
+
+  /* G L O B A L
+----------------------------------------------- */
+  body {
+    margin-top: 60px;
+    min-height: calc(100vh - 60px);
+  }
+
+
+  /* Header & Footer
+----------------------------------------------- */
+header .container, footer .container {
+  height: 60px;
+  flex-wrap: wrap;
+}
+footer .container {
+  height: 70px;
+}
+#name {
+  justify-content: center;
+  margin-top: 10px;
+}
+nav {
+  flex-grow: 1;
+  justify-content: space-around;
+}
+#copyright {
+  flex: 1 0 80px;
+  text-align: center;
+}
+#back-top {
+  flex: 1 0 160px;
+  text-align: center;
+  order: 1;
+}
+.footer-links {
+  justify-content: center;
+}
+
+
+
+
+  /* H O M E
+----------------------------------------------- */
+  main {
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .tile {
+    flex-basis: 100%;
+  }
+  .tile a {
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+  }
+ .tile a svg {
+    width: 200px;
+    height: 70px;
+  }
+  .tile a:hover svg {
+    display: block;
+    width: 200px;
+    height: 70px;
+  }
+
+
+  /* P R O J E C T
+----------------------------------------------- */
+  .order-flip .full-text,
+  .order-flip .two-thirds-text,
+  .order-flip .half-text,
+  .order-flip .third-text {
+    order: 1;
+  }
+  .order-flip .two-thirds-tile,
+  .order-flip .half-tile,
+  .order-flip .third-tile {
+    order: 2;
+  }
+  .full-text,
+  .half-text,
+  .third-text {
+    flex-basis: 96%;
+    width: 96%;
+    text-align: left;
+    margin: 20px auto 0;
+  }
+  .two-thirds-tile,
+  .half-tile,
+  .third-tile {
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .fourth-tile {
+    flex-basis: 49.5%;
+    width: 49.5%;
+    margin: 0 0 0.5% 0;
+  }
+
+  /* A B O U T
+----------------------------------------------- */
+  #about_max {
+    background-position: 86% 0;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+  }
+  #blurb-one {
+    padding: 10% 29% 10% 15px;
+  }
+  #blurb-two {
+    padding: 0 29% 20px 15px;
+  }
+  .item {
+    flex-basis: 100%;
+    padding: 0 10px 30px;
+  }
+  #resume h1 {
+    font-size: 1.4em;
+  }
+}
+
+/* For ascii art, I used 4Max from http://patorjk.com/software/taag/#p=display&v=0&f=4Max&t=Project */

@@ -1,0 +1,62 @@
+{% include header.html %}
+
+
+{% for post in site.posts %}
+
+<div class="post_nav">
+	<span class="fours"><a href="{{ post.url }}"><b>{{ post.title }}</b></a></span>
+	<span class="fours center">
+
+
+    {% assign categories_list = site.categories %}
+      {% if categories_list.first[0] == null %}
+        {% for category in categories_list %}
+                <a href="{{ category | prepend: '/category/' | prepend: site.url }}"> {{ category | capitalize }} ({{ site.tags[category].size }})</a>
+            <!--&bull;-->
+        {% endfor %}
+      {% else %}
+        {% for category in categories_list %}
+                <a href="{{ category[0] | prepend: '/category/' | prepend: site.url }}" class="recent-item"> {{ category[0] | capitalize }}</a>
+            &bull;
+        {% endfor %}
+      {% endif %}
+   {% assign categories_list = nil %}
+
+ </span>
+
+	<span class="fours right">
+		{{ post.date | date_to_long_string }}
+	</span>
+</div>
+
+<!-- begin post -->
+<div class="blog_post">
+  {{ post.excerpt }}
+
+  {% if post.image or post.video %}
+      <a href="#" class="image-anchor">
+
+            {% if post.image %}
+            <img class="img-main" src="{{ post.image | prepend: site.url }}" height="400">
+            {% endif %}
+
+            {% if post.video %}
+            <iframe class="img-main" src="https://www.youtube.com/embed/{{ post.video }}" frameborder="0" width="100%" height="400" allowfullscreen></iframe>
+            {% endif %}
+
+        </a> {% endif %}
+
+        {{ post.lead_text }}
+        <a href="{{ post.url | prepend: site.url }}">Read &rarr;</a>
+
+  <br class="clear"/>
+</div><!-- end post -->
+
+{% endfor %}
+
+
+{% include pagination.html %}
+
+{% include sidebar.html %}
+
+{% include footer.html %}

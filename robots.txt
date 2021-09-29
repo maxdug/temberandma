@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /citi/
+Disallow: /uwm/

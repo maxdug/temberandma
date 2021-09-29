@@ -1,0 +1,94 @@
+/* Blog
+----------------------------------------- */
+
+dt {
+    display: inline;
+    float: left;
+    margin: 10px;
+}
+
+.blog_post {
+	background: #eee;
+}
+.post_nav {
+    background: none repeat scroll 0 0 #CCCCCC;
+    clear: both;
+    color: #444444;
+    height: 35px;
+    letter-spacing: 0.3em;
+    margin: 20px 0 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: 960px;
+}
+.post_nav a:link, .post_nav a:visited {
+	text-decoration: none;
+	color: #444;
+}
+.post_nav a:hover {
+	text-decoration: underline;
+	color: #000;
+}
+
+#respond {
+	margin: 0 auto;
+}
+
+#comment_top {
+	width: 920px;
+	height: 18px;
+	margin: 0 0 10px 0;
+	padding: 10px;
+	background: #49e;
+	color: fff;
+}
+#comment_top h1 {
+	color: #fff;
+}
+ol.commentlist {
+	width: 940px;
+	margin: 0;
+	padding: 0;
+}
+.commentlist li {
+	border-bottom: solid 1px #444;
+	display: inline-block;
+	width: 940px;
+	margin: 0 0 10px 0;
+}
+
+
+.post_meta li {
+	margin: 0 20px;
+}
+textarea#comment {
+	width: 918px;
+}
+input#submit {
+	padding: 5px;
+	background: #444;
+	color: #fff;
+	border: none;
+}
+
+.category_title {
+    background: none repeat scroll 0 0 #CCCCCC;
+    font-size: 18px;
+    letter-spacing: 0.3em;
+    margin: 20px 0 0;
+    padding: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 930px;
+}
+
+.comment_box {
+    background: none repeat scroll 0 0 #EEEEEE;
+    clear: both;
+    display: block;
+    margin: 20px 0 0;
+    padding: 10px;
+    width: 940px;
+}
+
+
