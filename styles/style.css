@@ -1,9 +1,52 @@
-/* --------------------------------------------------------
- 		 dP""b8  88       dP"Yb   88""Yb     db     88
-		dP   `"  88      dP   Yb  88__dP    dPYb    88
-		Yb  "88  88  .o  Yb   dP  88""Yb   dP__Yb   88  .o
- 		 YboodP  88ood8   YbodP   88oodP  dP""""Yb  88ood8
------------------------------------------------------------ */
+@charset "UTF-8";
+ /*-----------------------------------------------------------------------------
+
+          ████████  █████  ██████  ██      ███████      ██████  ███████
+             ██    ██   ██ ██   ██ ██      ██          ██    ██ ██
+             ██    ███████ ██████  ██      █████       ██    ██ █████
+             ██    ██   ██ ██   ██ ██      ██          ██    ██ ██
+             ██    ██   ██ ██████  ███████ ███████      ██████  ██
+
+       ██████  ██████  ███    ██ ████████ ███████ ███    ██ ████████ ███████
+      ██      ██    ██ ████   ██    ██    ██      ████   ██    ██    ██
+      ██      ██    ██ ██ ██  ██    ██    █████   ██ ██  ██    ██    ███████
+      ██      ██    ██ ██  ██ ██    ██    ██      ██  ██ ██    ██         ██
+       ██████  ██████  ██   ████    ██    ███████ ██   ████    ██    ███████
+
+--------------------------------------------------------------------------------
+
+  ┌─ Global
+  │  └─ Page Titles
+  │
+  ├─ Typography
+  │  └─ Section Titles
+  │  └─ Buttons
+  │
+  ├─ Layout
+  │  └─ Containers
+  │
+  ├─ Components
+  │  └─ Cards, Tiles
+  │
+  └─ Header / Footer
+     └─ Headline, Strong, and Bold Text
+
+For ascii art, I used ANSI Regular and 4Max from http://patorjk.com/software/taag/#p=display&v=0&f=4Max&t=Project
+
+------------------------------------------------------------------*/
+
+
+/* --------------------------------------------------------------
+
+       ██████  ██       ██████  ██████   █████  ██
+      ██       ██      ██    ██ ██   ██ ██   ██ ██
+      ██   ███ ██      ██    ██ ██████  ███████ ██
+      ██    ██ ██      ██    ██ ██   ██ ██   ██ ██
+       ██████  ███████  ██████  ██████  ██   ██ ███████
+
+-------------------------------------------------------------- */
+
+
 
 * {
   padding: 0;
@@ -12,72 +55,291 @@
 
 html {
   -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
-img {
+/* needs to stay at begining, so it can be overwritten. */
+video, img {
   width: 100%;
 }
 
+.img-modal {
+  position: relative;
+}
+
+.img-modal:hover {
+  cursor: zoom-in;
+}
 body {
   display: flex;
-  height: calc(100vh - 60px);
-  flex-direction: column;
-  margin: 60px 0 0;
-  color: var(--MediumDark);
-  font-family: sans-serif;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background-color: var(--eucalyptus)
 }
 
+/* body#play {
+  background: url(/play/play-bg.jpg);
+  background-size: cover;
+} */
 :root {
-  --Negative: tomato; /*  */
-  --Positive: limegreen; /*  */
-  --Active: DodgerBlue; /*  */
-  --Secondary: DodgerBlue; /* Hover states */
-  --Tertiary: DeepPink; /*  */
-  --ExtraLight: #eee; /* Backgrounds */
-  --TransExtraLight: rgb(230, 230, 230, 0.75); /* Backgrounds */
-  --Light: #ccc; /* Backgrounds */
-  --MediumLight: #999; /* Text Links, */
-  --MediumDark: #666; /* Paragraph Text,  */
-  --Dark: #333; /*  */
+  --sunflower: #ffcf70; /*  */
+  --sage: #a3c9a8; /*  */
+  --eucalyptus: #69a297; /* Jungle */
+  --sapphire: #055983; /* Navy */
 }
 
-a {
-  color: var(--MediumLight);
-  text-decoration: underline;
+.video {
+  flex-basis: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: auto;
 }
-a:hover {
-  color: var(--Secondary);
+.video iframe,
+.video object,
+.video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.ytp-thumbnail .html5-stop-propagation {
+  background-image: url(http://maxduggan.com/images/blog_bg.jpg) !important;
+  background-color: #ccc !important;
+}
+
+input {
+  cursor: pointer;
+}
+
+section {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  padding: 4rem 0;
+  position: relative;
+}
+section.sunflower, .bottom-curve.sunflower {
+  background: var(--sunflower) url(/images/sunflower-paper.jpg);
+}
+section.sage, .bottom-curve.sage {
+  background: var(--sage) url(/images/sage-paper.jpg);
+}
+section.jungle, .bottom-curve.jungle {
+  background: var(--eucalyptus) url(/images/jungle-paper.jpg);
+}
+section.navy, .bottom-curve.navy {
+  background: var(--sapphire) url(/images/navy-paper.jpg);
+}
+.bottom-curve {
+  width: 100%;
+  background-position: center;
+  mask-image: url(/images/bottom-curve.svg);
+  mask-size: 101%;
+  mask-repeat: no-repeat;
+  mask-position: top;
+    -webkit-mask-image: url(/images/bottom-curve.svg);
+    -webkit-mask-size: 101%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: top;
+  height: clamp(20px,4vw,95px);
+  margin-bottom: -5.6vw;
+  z-index: 99;
+  margin-top: -.1vw;
+}
+
+
+
+/*------------------------------------------------
+
+      ████████ ██    ██ ██████  ███████
+         ██     ██  ██  ██   ██ ██
+         ██      ████   ██████  █████
+         ██       ██    ██      ██
+         ██       ██    ██      ███████
+
+-------------------------------------------------
+
+  • Choose a primary style of sans or sans-serif
+  • Decide if the brand has a secondary contrast of the opposite
+  • Scale should be based on visual differentiation between steps
+  • I tend to use verdana for base work since it's simple and legible for body Copy
+  • Alternate bold and normal and you go up the scale to provide differentiation
+
+  ┌─ 44px Page Title / H1
+  │  └─ Page Titles
+  │
+  ├─ 30px Section Title / H2
+  │  └─ Section Titles
+  │
+  ├─ 26px Sub Title / H3
+  │  └─ Paragraph / Body Text
+  │
+  ├─ 18px Label / H4
+  │  └─ Paragraph / Body Text
+  │
+  └─ 14px Body Copy / P
+     └─ Headline, Strong, and Bold Text
+
+*/
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-rt {
+  text-align: right;
+}
+
+.txt-lt {
+  text-align: left;
+}
+
+.txt-lg {
+  margin: 1.5em .3em;
+  font-size: clamp(1.2rem, 3.7vw, 1.4rem);
+}
+
+/* H E A D E R S
+----------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: .03em;
+  width: 100%;
+}
+h1,
+h1 a:link,
+h1 a:visited {
+  flex: 0 0 100%;
+  font-size: clamp(1.3rem,2.6vw,1.3rem);
+  margin: 1em 0 .3em;
+  color: white;
+  font-weight: 300;
+  text-transform: none;
   text-decoration: none;
+  text-align: center;
 }
+h1 a:hover {
+  color: black;
+}
+
+h2,
+h2 a:link,
+h2 a:visited {
+  width: 100%;
+  font-size: clamp(1.3rem,4vw,1.5rem);
+  margin: 1.3em 0 .3em;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: none;
+  text-align: center;
+}
+h2 a:hover {
+  color: Black;
+}
+h2 img {
+max-height: 80px;
+}
+h3, h3 a {
+  width: 100%;
+  font-size: clamp(.9rem,3.2vw,1.1rem);
+  margin: 1.4em 0 .3em;
+  color: var(--sage);
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+h3 a:hover {
+  color: Black;
+}
+section.jungle h3 {
+  color: white;
+}
+h4 {
+  width: 100%;
+  font-size: .9rem;
+  margin: .7em 0 .6em;
+  color: #333;
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+h4 a:hover {
+  color: Black;
+}
+
+p {
+  width: 100%;
+  font-size: 1rem;
+  margin: .5em 0;
+  letter-spacing: .03em;
+  line-height: 1.5em;
+  color: white;
+}
+
 a img {
   border-width: 0;
 }
-p {
-  font-size: 15px;
-  margin: 0 0 10px 0;
-  letter-spacing: .05em;
-  line-height: 1.5em;
-  color: var(--MediumDark);
-  font-weight: lighter;
+
+
+a {
+  color: var(--sunflower);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: var(--primary);
+  text-decoration-color: var(--primary);
+}
+body.touch a:hover, body.touch a:focus {
+  color: currentColor;
+  text-decoration-color: currentColor;
 }
 hr {
   height: 1px;
-  border-top: solid 1px var(--MediumLight);
+  border-top: solid 1px #999;
   border-bottom: none;
   clear: both;
 }
 b,
 strong {
+  color: #333;
   font-weight: 700;
 }
 
 q,
 blockquote {
-  padding: 5% 7% 7% 7%;
+  padding: 4%;
   display: block;
   clear: both;
   font-size: 22px;
+  color: black;
 }
+q::before, blockquote::before {
+  display: block;
+  height: 24px;
+  margin-left: -30px;
+  font-size: 60px;
+}
+q::after, blockquote::after {
+  display: none;
+}
+q .author {
+  display: block;
+  float: right;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #777;
+}
+
 ul {
   list-style: disc;
   padding: 0 0 0 20px;
@@ -95,245 +357,533 @@ ol {
   padding: 0 0 0 20px;
   margin: 0 0 10px 0;
 }
-.video {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
+
+
+
+/*
+      88""Yb 88   88 888888 888888  dP"Yb  88b 88 .dP"Y8
+      88__dP 88   88   88     88   dP   Yb 88Yb88 `Ybo."
+      88""Yb Y8   8P   88     88   Yb   dP 88 Y88 o.`Y8b
+      88oodP `YbodP'   88     88    YbodP  88  Y8 8bodP'
+*/
+
+/* could these be refactored with currentColor? */
+
+button, [type="submit"], [type="button"], [type="reset"], .button, .btn {
+  display: inline-block;
+  width: auto;
   height: auto;
+  margin: .9em .8rem;
+  padding: .6em 1.7em .55em;
+  font-size: 1.2rem;
+  border-radius: .5rem;
+  -webkit-appearance: none;
+  text-decoration: none;
+  text-align: center;
+  background-color: white;
+  border: none;
+  transition: color 350ms ease-in-out, background-color 350ms ease-in-out;
+  font-weight: 700;
+  letter-spacing: .03em;
 }
-.video iframe,
-.video object,
-.video embed {
+button::after, [type="submit"]::after, [type="button"]::after, [type="reset"]::after, .button::after, .btn::after {
+  display: none;
+}
+.btn-sm {
+  font-size: 1rem;
+}
+.btn-lg {
+  font-size: 1.4rem;
+}
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+.btn-primary:hover, .btn-primary:focus {
+
+}
+.btn.rsvp {
   position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: var(--sapphire);
+  color: var(--sunflower);
+}
+.btn.rsvp:hover, .btn.rsvp:focus {
+
+}
+.btn-outline-primary {
+  border: 2px solid var(--primary);
+  color: var(--primary)
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+  background-color: var(--primary);
+  color: white;
+}
+.btn-light {
+  background-color: white;
+  color: #333;
+}
+.btn-light:hover, .btn-light:focus {
+  background-color: var(--primary);
+  color: white;
+}
+.btn-outline-light {
+  background-color: initial;
+  border: 2px solid white;
+  color: white;
+}
+.btn-outline-light:hover, .btn-outline-light:focus {
+  background-color: white;
+  color: var(--primary)
+}
+.btn-dark {
+  background-color: #555;
+  color: white;
+}
+.btn-dark:hover, .btn-dark:focus {
+  background-color: #333;
+}
+.btn-outline-dark {
+  border: 2px solid #555;
+  color: #555;
+}
+.btn-outline-dark:hover, .btn-outline-dark:focus {
+  background-color: #555;
+  color: white;
+}
+
+.btn-outline-disabled {
+  border: 2px solid #bbb;
+  color: #999;
+  cursor: default;
+}
+.btn-outline-disabled:hover, .btn-outline-disabled:focus {
+  /* background-color: #999;
+  color: white; */
+}
+
+/* Spans full width of space */
+.btn-block {
+
+}
+.form-field:focus-within+.btn-outline-disabled {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  cursor: pointer;
+}
+.form-field:focus-within+.btn-outline-disabled:hover {
+  background-color: var(--primary);
+  color: white;
+}
+body.touch button, body.touch [type="submit"], body.touch [type="button"], body.touch [type="reset"], body.touch .button, body.touch .btn {
+  transition: none;
+}
+
+/*------------------------------------------------------------------------------
+
+                ██       █████  ██    ██  ██████  ██    ██ ████████
+                ██      ██   ██  ██  ██  ██    ██ ██    ██    ██
+                ██      ███████   ████   ██    ██ ██    ██    ██
+                ██      ██   ██    ██    ██    ██ ██    ██    ██
+                ███████ ██   ██    ██     ██████   ██████     ██
+
+--------------------------------------------------------------------------------
+
+1. Set container or content class depending on need for sub division and left/right margins
+2. Set size
+3. Use standard html elements: h1, p, image, etc...
+
+  ┌─ Header
+  ├─ Main
+  │  ├─ Containers
+  │  │   ├─ Multi Column Content
+  │  │   │  └─ html elements
+  │  │   └─ Components
+  │  └─ Single Column Content
+  │      └─ html elements
+  └─ Footer
+
+*/
+
+:root {
+  --x-margin-l: 1rem;
+  --x-doublemargin-l: calc(var(--x-margin-l) * 2);
+  --y-margin-l: .6rem;
+  --y-doublemargin-l: calc(var(--y-margin-l) * 2);
+  --x-margin-m: .8rem;
+  --x-doublemargin-m: calc(var(--x-margin-m) * 2);
+  --y-margin-m: .4rem;
+  --y-doublemargin-m: calc(var(--y-margin-m) * 2);
+  --x-margin-s: .6rem;
+  --x-doublemargin-s: calc(var(--x-margin-s) * 2);
+  --y-margin-s: .2rem;
+  --y-doublemargin-s: calc(var(--y-margin-s) * 2);
+}
+
+/* Default is large margin */
+.fourteenforty, .tentwentyfour, .article, .full, .two-thirds, .half, .third, .fourth  {
+  margin: var(--y-margin-l) var(--x-margin-l);
+}
+.margin-m {
+  margin: var(--y-margin-m) var(--x-margin-m);
+}
+.margin-s {
+  margin: var(--y-margin-s) var(--x-margin-s);
+}
+/* no margin */
+.container {
+  margin: 0;
+}
+
+main, .paralax, .fourteenforty, .tentwentyfour, .article, .full, .two-thirds, .half, .third, .fourth  {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  flex-grow: 1; /* Default value is 0 */
+  align-content: flex-start;
+}
+.paralax {
+  width: 100%;
+}
+.dark h1, .dark h2, .dark h3, .dark h4, .dark p {
+  color: white;
+}
+
+/* Parent container on all pages, except custom apps. This is the container for containers. */
+main {
+  width: 100%;
+  flex: 0 0 auto; /* used for sticky footer (body direction is column) */
+}
+
+/* 1440 - Outside of paralax and heros, largest scanable width. Users shouldn't have to turn their head. */
+.fourteenforty {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 calc(50% - 720px - var(--x-doublemargin-l));
+}
+.fourteenforty.no-margin, .container.fourteenforty {
+  padding: 0 calc(50% - 720px);
+}
+/* 1024 - Used for Most not full screen content */
+.tentwentyfour {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 calc(50% - 512px - var(--x-doublemargin-l));
+}
+.tentwentyfour.no-margin, .container.tentwentyfour {
+  padding: 0 calc(50% - 512px);
+}
+/* 720 - Designed for best legibility of large amounts of text information */
+.article {
+  width: 100%;
+  max-width: 720px;
+  padding: 0 calc(50% - 360px - var(--x-doublemargin-l));
+}
+.article.no-margin, .container.article {
+  padding: 0 calc(50% - 360px);
+}
+.full {
+  flex: 0 0 calc(100% - var(--x-doublemargin-l));
+}
+.three-fourths {
+  flex: 1 0 300px;
+  min-width: calc(75% - var(--x-doublemargin-l));
+  max-width: 720px;
+}
+.two-thirds {
+  flex: 1 0 300px;
+  min-width: calc(66% - var(--x-doublemargin-l));
+  max-width: 720px;
+}
+.half {
+  flex: 1 0 300px;
+  min-width: calc(50% - var(--x-doublemargin-l));
+  max-width: 720px;
+}
+.third {
+  flex: 1 0 200px;
+  min-width: calc(33% - var(--x-doublemargin-l));
+  max-width: 580px;
+}
+.fourth {
+  flex: 1 0 200px;
+  min-width: calc(25% - var(--x-doublemargin-l));
+  max-width: 430px;
+}
+
+
+/* video, .fourteenforty img, .tentwentyfour img, .article img, .full img, .two-thirds img, .half img, .third img, .fourth img  {
+width: 100%;
+} */
+
+.img-caption {
+  position: absolute;
+  bottom: 0;
+  display: none;
+  width: calc(100% - 8px);
+  color: #666;
+  background-color: hsla(0,100%,100%,0.8);
+  padding: 4px;
+  font-size: .8rem;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+div:hover .img-caption {
+  display: block;
+}
+
+
+
+/* ----- Mobile ----- */
+@media (max-width: 600px) {
+  .order-flip div:nth-child(1) {
+    order: 2;
+  }
+}/* End Media under 600px */
+
+/*--------------------------------------
+
+      ███    ██  █████  ██    ██
+      ████   ██ ██   ██ ██    ██
+      ██ ██  ██ ███████ ██    ██
+      ██  ██ ██ ██   ██  ██  ██
+      ██   ████ ██   ██   ████
+
+--------------------------------------*/
+
+nav {
+  display: flex;
+	flex: 0 0 auto;
+  margin: 0 10px;
+	flex-flow: row wrap;
+  position: fixed;
+  left: 20px;
+  color: white;
+  top: 18%;
+  width: 160px;
+  z-index: 100;
+}
+nav a {
+  position: relative;
+	padding: 3px 8px;
+	text-decoration: none;
+  transition: 350ms ease-in-out;
+  margin: .5em 0;
+  font-size: 1.2rem;
+  color: white;
+  width: 100%;
+}
+nav a img {
+  /* max-width: 120px; */
+  max-height: 45px;
+}
+.hide {
+  opacity: 0;
+  left: -100%;
+  transition: opacity 350ms ease-in-out;
+}
+.show {
+  opacity: 1;
+  left: 0;
+}
+
+
+
+.burger {
+  background: var(--light);
+  position: fixed;
+  z-index: 999;
+  top: 15px;
+  left: 15px;
+  padding: 10px 10px 0;
+  display: inline-block;
+  border: 0;
+  background: none;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+  border-bottom: 4px solid currentColor;
+  width: 28px;
+  transition: border-bottom 1s ease-in-out;
+  -webkit-transition: border-bottom 1s ease-in-out;
+}
+
+.burger::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.burger:before {
+  content: "";
+  display: block;
+  border-bottom: 4px solid currentColor;
+  width: 100%;
+  margin-bottom: 5px;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+
+.burger:after {
+  content: "";
+  display: block;
+  border-bottom: 4px solid currentColor;
+  width: 100%;
+  margin-bottom: 5px;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+
+.burger-check {
+  display: none;
+}
+
+.burger-check:checked ~ .burger {
+  border-bottom: 4px solid transparent;
+  transition: border-bottom 0.8s ease-in-out;
+  -webkit-transition: border-bottom 0.8s ease-in-out;
+}
+
+.burger-check:checked ~ .burger:before {
+  margin-top: 7px;
+  transform: rotate(-405deg) translateY(1px) translateX(-3px);
+  -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+
+.burger-check:checked ~ .burger:after {
+  transform: rotate(405deg) translateY(-4px) translateX(-5px);
+  -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+
+nav.mobile {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+  background: var(--extra-light);
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  padding: 0;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  z-index: 100;
+  background: var(--sage);
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  text-align: center;
 }
-.ytp-thumbnail .html5-stop-propagation {
-  background-image: url(http://maxduggan.com/images/blog_bg.jpg) !important;
-  background-color: var(--Light) !important;
-}
-
-.button {
-  text-decoration: none;
-  color: #eee;
-  background: #333;
-  padding: .8em 2em;
-}
-.button:hover {
-  background: black;
-  color: white;
-}
-input, input[type="password"] {
-  -webkit-appearance: none;
-  width: 100%;
-  padding: 10px;
-  border: 1px solid var(--Light);
-  border-radius: 0;
-  box-sizing: border-box;
-  margin: 10px 0;
+.burger-check:checked ~ nav.mobile {
+  max-height: 100vh;
+  transition: max-height 0.5s ease-in-out;
+  padding: 20px;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
 }
 
-input[type="submit"], input[type="button"] {
-  -webkit-appearance: none;
-  border-radius: 0;
-  background-color: var(--Dark);
-  color: white;
-}
-input[type="submit"]:hover, input[type="button"]:hover {
-  background-color: Black;
-  color: white;
+.pointer {
+  cursor: pointer;
 }
 
-input:focus,
-textarea:focus, input[type="password"]:focus {
-  border-bottom: none;
-  border-right: none;
-  outline: none;
-  background-color: var(--Light);
+.burger, nav.mobile {
+  display: none;
 }
-
-/* H E A D E R S
------------------------------------------------ */
-h1, h2, h3, h4, h5, h6 {
-  letter-spacing: .1em;
-}
-h1, h1 a {
-  font-size: 15px;
-  margin: 0 0 6px 0;
-  color: var(--Dark);
-  font-weight: 400;
-  text-transform: uppercase;
-  line-height: 18px;
-}
-h1 a:hover {
-  color: Black;
-}
-h2, h2 a {
-  font-size: 12px;
-  margin: 0 0 6px 0;
-  color: var(--Dark);
-  font-weight: 400;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-h2 a:hover {
-  color: Black;
-}
-
-h3, h3 a {
-  font-size: 30px;
-  margin: 0 0 5px 0;
-  color: var(--Dark);
-  font-weight: 400;
-  line-height: 30px;
-}
-h3 a:hover {
-  color: Black;
+@media (max-width: 970px) {
+  nav.desktop {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  nav.mobile {
+    display: flex;
+  }
 }
 
 /*
-88  88 888888    db    8888b.  888888 88""Yb        dP     888888  dP"Yb   dP"Yb  888888 888888 88""Yb
-88  88 88__     dPYb    8I  Yb 88__   88__dP       dP      88__   dP   Yb dP   Yb   88   88__   88__dP
-888888 88""    dP__Yb   8I  dY 88""   88"Yb       dP       88""   Yb   dP Yb   dP   88   88""   88"Yb
-88  88 888888 dP""""Yb 8888Y"  888888 88  Yb     dP        88      YbodP   YbodP    88   888888 88  Yb
+      888888  dP"Yb   dP"Yb  888888 888888 88""Yb
+      88__   dP   Yb dP   Yb   88   88__   88__dP
+      88""   Yb   dP Yb   dP   88   88""   88"Yb
+      88      YbodP   YbodP    88   888888 88  Yb
 */
-header, footer {
-	width: 100%;
-	letter-spacing: .2em;
-	background: var(--ExtraLight);
-	text-transform: uppercase;
-	font-size: .7em;
-	color: var(--MediumDark);
-}
-header {
-	position: fixed;
-	top: 0;
-	z-index: 999;
-}
 footer {
-	justify-self: flex-end;
-}
-header .container, footer .container {
-	display: flex;
-    max-width: 1440px;
-	width: 98%;
-	height: 50px;
-	margin: 0 auto;
-	padding: 0 1%;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	align-items: center;
-}
-
-#name {
-	flex: 1 0 160px;
-	color: var(--Dark);
-	text-decoration: none;
-	font-size: 1.5em;
+  width: 100%;
+  letter-spacing: .1em;
   display: flex;
-  flex-flow: row wrap;
-  text-align: center;
-  margin-top: 10px;
-}
-#name img {
-  flex: 0 0 50px;
-  margin-right: 10px;
-}
-#name:hover {
-	color: var(--Secondary);
-}
-body.touch #name:hover {
-	color: var(--Secondary);
-}
-
-
-
-
-
-
-
-nav {
-	flex: 0 0 18em;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-between;
-	text-transform: uppercase;
-  margin-top: 10px;
-}
-nav a {
-	padding-bottom: 3px;
-	color: var(--Dark);
-	text-decoration: none;
-}
-nav a:hover, nav a.sfhover {
-	color: var(--Secondary);
-}
-#design a.work, #blog a.blog, #art a.art, #about a.about {
-	border-bottom: solid 3px var(--Secondary);
-}
-
-.footer-space {
-	flex: 1 0 auto;
-  height: 2px;
-}
-#copyright {
-	flex: 1 0 160px;
-}
-#back-top {
-	text-decoration: none;
-}
-.footer-links {
-    flex: 1 0 160px;
-    display: flex;
-    justify-content: flex-end;
-}
-.footer-links a {
-  width: 20px;
-	margin-left: 2%;
-	text-decoration: none;
-}
-footer svg {
-	max-width: 1.7em;
-	max-height: 1.7em;
-}
-footer a:hover .footerIcon{
-	fill:  var(--Secondary);
-}
-
-a .footerIcon {
-	fill: #444;
-}
-
-body.touch footer a:hover .footerIcon {
-	fill: #444;
-}
-
-/* ---------------------------------------------
-			88  88   dP"Yb   8b    d8  888888
-			88  88  dP   Yb  88b  d88  88__
-			888888  Yb   dP  88YbdP88  88""
-			88  88   YbodP   88 YY 88  888888
------------------------------------------------ */
-main {
+  padding: 10px calc(50% - 512px);
   max-width: 1440px;
-  width: 98%;
-  margin: 0 auto;
-  display: flex;
+  justify-content: space-between;
   flex-flow: row wrap;
-  flex: 0 0 auto; /* used for sticky footer */
+  align-items: center;
+  background: var(--sapphire);
+  color: white;
+  font-size: .9rem;
 }
+
+footer .span {
+  flex: 1 0 130px;
+  margin: 10px;
+}
+
+footer span:nth-child(1) {
+
+}
+footer span:nth-child(2) {
+  text-align: center;
+}
+
+footer span:nth-child(3) {
+
+}
+
+
+/*----------------------------------------------------------------------------------------
+
+ ██████  ██████  ███    ███ ██████   ██████  ███    ██ ███████ ███    ██ ████████ ███████
+██      ██    ██ ████  ████ ██   ██ ██    ██ ████   ██ ██      ████   ██    ██    ██
+██      ██    ██ ██ ████ ██ ██████  ██    ██ ██ ██  ██ █████   ██ ██  ██    ██    ███████
+██      ██    ██ ██  ██  ██ ██      ██    ██ ██  ██ ██ ██      ██  ██ ██    ██         ██
+ ██████  ██████  ██      ██ ██       ██████  ██   ████ ███████ ██   ████    ██    ███████
+
+----------------------------------------------------------------------------------------*/
+
+
 .tile {
-  flex: 1 0 calc(25% - 4px);
-  margin: 2px;
+  display: block;
+  flex: 1 0 160px;
+  min-width: calc(25% - 20px);
+  margin: 10px;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+}
+.tile.double {
+  min-width: calc(50% - 4px);
 }
 .tile a {
   display: flex;
   position: relative;
-  height: 200px;
+  height: clamp(150px,25vw,200px);
   flex-flow: row wrap;
   align-content: center;
   align-items: center;
@@ -341,449 +891,178 @@ main {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: grayscale(100%);
+  background-color: #333;
+  overflow: hidden;
+  /* transition: background-blend-mode 350ms ease-in-out; */
 }
 
-.tile a:hover {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
+.tile:hover a, .tile a:focus {
+  /* background-blend-mode: overlay; */
 }
-.tile-logo {
+
+.tile-overlay {
+  opacity: 0;
+  background: radial-gradient(rgba(0, 0, 0, 0.45) 0%,rgba(0, 0, 0, 0.28) 33%, rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 350ms ease-in-out;
+}
+body.touch .tile-overlay {
+  opacity: 1;
+}
+.tile a:hover .tile-overlay, .tile a:focus .tile-overlay {
+  opacity: 1;
+  /* display: inline-block; */
+}
+.tile svg, .tile img.tile-logo {
+  opacity: 0;
+  transform: scale(.95);
+  max-width: clamp(calc(60% - 20px),33vw,calc(70% - 20px));
+  max-height: clamp(calc(35% - 20px),9vw,calc(45% - 20px));
+  margin: 10px;
+  transition: opacity 350ms ease-in-out, transform 350ms ease-in-out;
   fill: white;
 }
-.tile {
-  display: block;
-}
-
-.tile svg, .tile img.tile-logo {
-  display: none;
-  max-width: calc(80% - 20px);
-  max-height: calc(60% - 20px);
-  margin: 10px;
-  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.8));
-}
-.tile img.tile-logo {
-  width: auto;
+.tile svg {
+  width: 100%;
 }
 .tile-logo {
-  display: none;
-  fill: White;
+  /* fill: white; */
 }
-
-.tile:hover svg,
-.tile:hover .tile-logo {
-  display: block;
+img.tile-logo {
+  width: auto;
+}
+.tile:hover svg, .tile a:focus svg,
+.tile:hover img.tile-logo, .tile a:focus img.tile-logo {
+  opacity: 1;
+  transform: scale(1);
 }
 .lock {
-  width: 10px;
+  width: 14px;
   margin: 0 8px 4px;
   bottom: 0;
   right: 0;
   position: absolute;
 }
 .title {
-  color: white;
-  display: inline-block;
-  font-size: .7em;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  padding: 10px 0 4px 10px;
+  display: flex;
+  width: calc(100% - 20px);
+  height: calc(100% - 10px);
+  transform: translate(0%, 70%);
+  padding: 5px 10px;
   left: 0;
   bottom: 0;
-  right: 0;
   position: absolute;
-  align-self: flex-end;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-}
-#design a:hover .title {
-  display: none;
-}
-
-
-
-body.touch .title {
-  display: none;
-}
-body.touch .tile:hover {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-}
-body.touch .tile svg,
-body.touch .tile .tile-logo {
-  display: block;
-}
-body.touch .tile a {
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-  background-size: cover;
-}
-
-#art .title {
-  display: block;
-}
-
-/* ------------------------------------------------------------------
-			88""Yb  88""Yb   dP"Yb    88888  888888   dP""b8  888888
-			88__dP  88__dP  dP   Yb      88  88__    dP   `"    88
-			88"""   88"Yb   Yb   dP  o.  88  88""    Yb         88
-			88      88  Yb   YbodP   "bodP'  888888   YboodP    88
--------------------------------------------------------------------- */
-
-main.project {
-  max-width: 1440px;
-  width: 98%;
-  margin: 0 auto 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  flex: 0 0 auto; /* used for sticky footer */
-}
-
-.order-flip {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* T E X T
------------------------------------------------ */
-.full-text {
-  flex-basis: 80%;
-  width: 80%;
-  margin: 30px 10% 10px;
-  text-align: center;
-}
-.half-text {
-  flex-basis: 47%;
-  width: 47%;
-  margin: 1.5%;
-}
-.third-text {
-  flex-basis: 30%;
-  width: 30%;
-  margin: 1.5%;
-}
-
-/* I M A G E S
------------------------------------------------ */
-.full-tile {
-  flex-basis: calc(100% - 2px);
-  width: calc(100% - 2px);
-  margin: 1px 0;
-}
-.two-thirds-tile {
-  flex-basis: calc(66.6% - 2px);
-  width: calc(66.6% - 2px);
-  margin: 1px 0;
-}
-.half-tile {
-  flex-basis: 49%;
-  width: 49%;
-  margin: 0.5%;
-}
-.third-tile {
-  flex-basis: 32%;
-  width: 32%;
-  margin: 0.5%;
-}
-.fourth-tile {
-  flex-basis: 24%;
-  width: 24%;
-  margin: 0.5%;
-}
-
-/* --------------------------------------------------
-			   db     88""Yb   dP"Yb   88   88  888888
-			  dPYb    88__dP  dP   Yb  88   88    88
-			 dP__Yb   88""Yb  Yb   dP  Y8   8P    88
-			dP""""Yb  88oodP   YbodP   `YbodP'    88
------------------------------------------------------ */
-#about_max {
-  max-width: 1400px;
-  margin: 0 auto;
-  height: 350px;
-  background: url(/about/max-duggan.jpg) 100% 0 no-repeat;
-  line-height: 22px;
-  font-size: 14px;
-  text-align: center;
-}
-#about_max a {
-  color: #333;
-}
-#blurb-one {
-  flex-basis: 100%;
-  padding: 6% 30% 6% 4%;
-  color: var(--Dark);
-}
-#resume {
-  width: 100%;
-  padding: 20px 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-#resume h1 {
-  flex-basis: 100%;
-  width: 100%;
-  margin: 20px 0;
-  font-size: 50px;
-  text-align: center;
-  color: #777;
-  letter-spacing: 0.4em;
-  line-height: normal;
-  text-indent: 0.7em;
-}
-.item {
-  flex-basis: 30%;
-  padding: 0 10% 40px;
-}
-#resume h2 {
-  font-size: 12px;
+  align-items: flex-end;
   font-weight: 700;
-  line-height: 18px;
-  text-align: center;
-  color: var(--MediumDark);
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+  color: white;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  transition: transform 350ms ease-in-out;
+  /* filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.2)); */
 }
-#resume h3 {
-  font-size: 14px;
-  line-height: 18px;
-  padding: 0 0 2px 0;
-  text-align: center;
-  color: var(--MediumLight);
-}
-#resume h4 {
-  font-size: 13px;
-  text-align: center;
-  color: var(--MediumDark);
+#play .tile:hover .title, body#play.touch .title {
+  transform: translate(0, 0);
 }
 
-/* TABLES */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
+body.touch .tile svg,
+body.touch .tile img.tile-logo {
+  opacity: 1;
+  transform: scale(1);
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.2));
 }
 
-/* Style table headers and table data */
-th,
-td {
-  text-align: center;
-  padding: 16px;
-}
-
-th:first-child,
-td:first-child {
-  text-align: left;
-}
-
-/* Zebra-striped table rows */
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.fa-check {
-  color: green;
-}
-
-.fa-remove {
-  color: red;
-}
-
-/* ---------------------------------------------------------
-				888888    db     88""Yb  88      888888  888888
-				  88     dPYb    88__dP  88      88__      88
-				  88    dP__Yb   88""Yb  88  .o  88""      88
-				  88   dP""""Yb  88oodP  88ood8  888888    88
------------------------------------------------------------- */
-.tablet_only {
+/* More Content */
+.nixon .nixon, .bcg .bcg, .citi .citi, .uwm .uwm, .puma .puma, .lazboy .lazboy, .twc .twc, .remesh .remesh, .nyandco .nyandco, .maxduggan .maxduggan, .sani .sani, .labaguette .labaguette, .bluecollar .bluecollar, .halloween .halloween, .sideroad .sideroad, .origin .origin {
   display: none;
 }
 
-@media (max-width: 980px) and (min-width: 601px) {
-  .tablet_only {
-    display: block;
-  }
 
+/*
+         db     dP""b8  dP""b8 888888 .dP"Y8 .dP"Y8
+        dPYb   dP   `" dP   `" 88__   `Ybo." `Ybo."
+       dP__Yb  Yb      Yb      88""   o.`Y8b o.`Y8b
+      dP""""Yb  YboodP  YboodP 888888 8bodP' 8bodP'
 
-/* Header & Footer */
-footer .container {
-  height: 70px;
-}
+      888888  dP"Yb  88""Yb 8b    d8
+      88__   dP   Yb 88__dP 88b  d88
+      88""   Yb   dP 88"Yb  88YbdP88
+      88      YbodP  88  Yb 88 YY 88
+*/
 
-nav {
-  flex-grow: 1;
+#access-form {
+  display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
+  width: 100%;
+  margin: 10px 0  30px 0;
+  align-items: center
 }
-#copyright {
-  flex: 1 0 80px;
-  text-align: center;
-}
-#back-top {
+
+#access-form .form-field {
+  position:relative;
   flex: 1 0 160px;
-  text-align: center;
-  order: 1;
-}
-.footer-links {
-  justify-content: center;
+  margin: 20px 10px 10px 0;
+  letter-spacing: .03em;
 }
 
-  /* H O M E
------------------------------------------------ */
-  .tile {
-    flex-basis: calc(33.33% - 4px);
-  }
-
-  /* P R O J E C T
------------------------------------------------ */
-
-  /* A B O U T
------------------------------------------------ */
-  #about_max {
-    background-position: 87% 0;
-    font-size: 13px;
-  }
-  #blurb-one {
-    padding: 7% 30% 7% 4%;
-  }
-  #resume h1 {
-    font-size: 45px;
-  }
-}
-
-/* ------------------------------------------------------------
-				8b    d8   dP"Yb   88""Yb  88  88      888888
-				88b  d88  dP   Yb  88__dP  88  88      88__
-				88YbdP88  Yb   dP  88""Yb  88  88  .o  88""
-				88 YY 88   YbodP   88oodP  88  88ood8  888888
---------------------------------------------------------------- */
-@media (max-width: 600px) {
-  .tablet_only {
-    display: none;
-  }
-
-  /* G L O B A L
------------------------------------------------ */
-  body {
-    margin-top: 60px;
-    min-height: calc(100vh - 60px);
-  }
-
-
-  /* Header & Footer
------------------------------------------------ */
-header .container, footer .container {
-  height: 60px;
-  flex-wrap: wrap;
-}
-footer .container {
-  height: 70px;
-}
-#name {
-  justify-content: center;
-  margin-top: 10px;
-}
-nav {
-  flex-grow: 1;
-  justify-content: space-around;
-}
-#copyright {
-  flex: 1 0 80px;
-  text-align: center;
-}
-#back-top {
+#access-form input[type="password"] {
   flex: 1 0 160px;
-  text-align: center;
-  order: 1;
+  width: 100%;
+  padding:10px;
+  border:none;
+  font-size:18px;
+  cursor: text;
 }
-.footer-links {
-  justify-content: center;
-}
-
-
-
-
-  /* H O M E
------------------------------------------------ */
-  main {
-    width: 100%;
-    margin-bottom: 0;
-  }
-  .tile {
-    flex-basis: 100%;
-  }
-  .tile a {
-    width: 100%;
-    height: 100px;
-    background-size: cover;
-  }
- .tile a svg {
-    width: 200px;
-    height: 70px;
-  }
-  .tile a:hover svg {
-    display: block;
-    width: 200px;
-    height: 70px;
-  }
-
-
-  /* P R O J E C T
------------------------------------------------ */
-  .order-flip .full-text,
-  .order-flip .two-thirds-text,
-  .order-flip .half-text,
-  .order-flip .third-text {
-    order: 1;
-  }
-  .order-flip .two-thirds-tile,
-  .order-flip .half-tile,
-  .order-flip .third-tile {
-    order: 2;
-  }
-  .full-text,
-  .half-text,
-  .third-text {
-    flex-basis: 96%;
-    width: 96%;
-    text-align: left;
-    margin: 20px auto 0;
-  }
-  .two-thirds-tile,
-  .half-tile,
-  .third-tile {
-    flex-basis: 100%;
-    width: 100%;
-  }
-  .fourth-tile {
-    flex-basis: 49.5%;
-    width: 49.5%;
-    margin: 0 0 0.5% 0;
-  }
-
-  /* A B O U T
------------------------------------------------ */
-  #about_max {
-    background-position: 86% 0;
-    font-size: 12px;
-    line-height: 18px;
-    text-align: left;
-  }
-  #blurb-one {
-    padding: 10% 29% 10% 15px;
-  }
-  #blurb-two {
-    padding: 0 29% 20px 15px;
-  }
-  .item {
-    flex-basis: 100%;
-    padding: 0 10px 30px;
-  }
-  #resume h1 {
-    font-size: 1.4em;
-  }
+.form-field::before {
+  position: absolute;
+  content: '';
+  background: #ccc;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
 
-/* For ascii art, I used 4Max from http://patorjk.com/software/taag/#p=display&v=0&f=4Max&t=Project */
+.form-field:focus-within::after {
+  position: absolute;
+  content: '';
+  background: var(--primary);
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  animation: 450ms ease-in-out nav-bar;
+}
+
+input:focus,
+textarea:focus, #access-form input[type="password"]:focus {
+  border: none;
+  outline: none;
+}
+
+#access-form label {
+  width: 100%;
+  color:#999;
+  font-size:18px;
+  font-weight: 700;
+  position:absolute;
+  pointer-events:none;
+  left:0;
+  top:10px;
+  transition: 350ms ease-in-out all;
+}
+#access-form input:focus ~ label, #access-form input:valid ~ label 		{
+  top: -1.1em;
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.seal {
+  height: 50vh;
+  width: auto;
+}
