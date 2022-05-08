@@ -1066,3 +1066,7 @@ textarea:focus, #access-form input[type="password"]:focus {
   height: 50vh;
   width: auto;
 }
+
+.blxCBd {
+  display: none;
+}
