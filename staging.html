@@ -5,7 +5,7 @@ description: Resources for Tember and Max's Wedding
 section: Home
 ---
 <script>
-  document.getElementById("mbl-nav").addEventListener("click", myFunction);
+document.getElementById("mbl-nav").addEventListener("click", myFunction);
 
 function myFunction() {
   document.getElementById("burger-check").checked = false;
@@ -24,8 +24,8 @@ function myFunction() {
 <input class="burger-check" id="burger-check" type="checkbox">
 <label for="burger-check" class="burger"></label>
 <nav id="mobile-menu" class="mobile">
-  <a href="#schedule" onclick="myFunction()"><img src="/images/nav-schedule.svg" alt="Schedule"></a>
-  <a href="#travel" onclick="myFunction()"><img src="/images/nav-travel.svg" alt="Travel"></a>
+  <a id="mbl-nav" href="#schedule" onclick="myFunction()"><img src="/images/nav-schedule.svg" alt="Schedule"></a>
+  <a id="mbl-nav" href="#travel" onclick="myFunction()"><img src="/images/nav-travel.svg" alt="Travel"></a>
   <a id="mbl-nav" href="#hotels" onclick="myFunction()"><img src="/images/nav-hotels.svg" alt="Hotels"></a>
   <a id="mbl-nav" href="#photos" onclick="myFunction()"><img src="/images/nav-photos.svg" alt="Photos"></a>
   <a id="mbl-nav" href="#registry" onclick="myFunction()"><img src="/images/nav-registry.svg" alt="Registry"></a>
@@ -215,29 +215,29 @@ No need to rent a car.</p>
   <h2><img src="/images/nav-hotels.svg" alt="Hotels"></h2>
   <div class="article container">
     <div class="half">
-      <img src="/images/old-town-mannor.png" alt="">
+      <img style="max-width: 300px;" src="/images/hotels-otm.png" alt="">
     </div>
-    <div class="half">
+    <div style="align-content: center;" class="half">
       <h3>Old Town Manor</h3>
       <p>Old Town Manor is a historic bed and breakfast in the heart of Key West. Our ceremony & reception will take place in the private garden that the rooms overlook. Complimentary breakfast is offered daily, and the hotel is pet friendly. </p>
     </div>
   </div>
 
     <div class="article container">
-      <div class="half">
+      <div style="align-content: center;" class="half">
         <h3>Airbnbs & Vrbo</h3>
         <p>Many affordable vacation properties are available to rent in the Keys via airbnb.com and vrbo.com. This option is ideal if you prefer to stay in a condo or house, or don’t want to stay downtown. </p>
       </div>
       <div class="half">
-        <img src="/images/old-town-mannor.png" alt="">
+        <img style="max-width: 240px;" src="/images/airbnb.png" alt="">
       </div>
     </div>
 
       <div class="article container">
         <div class="half">
-          <img src="/images/old-town-mannor.png" alt="">
+          <img style="max-width: 280px;" src="/images/hotels.png" alt="">
         </div>
-        <div class="half">
+        <div style="align-content: center;" class="half">
           <h3>Other Hotels</h3>
           <p>There are several boutique hotels and hotel chains in Key West. Consider this option if you want to stay nearby in Key West with all the convenience and amenities.</p>
         </div>
@@ -248,7 +248,7 @@ No need to rent a car.</p>
 <section id="photos" class="sunflower">
   <h2><img src="/images/nav-photos.svg" alt="Photos"></h2>
   <div class="article container">
-  <div class="three-fourths container">
+  <div style="min-height: 230px;" class="three-fourths container">
       <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/tucson-01.jpg); height: 94%;" href="/photos/tucson-01.jpg" title="Part of our road trip in Tuscon, Arizona."></a>
   </div>
   <div class="fourth container">
