@@ -402,15 +402,20 @@ button::after, [type="submit"]::after, [type="button"]::after, [type="reset"]::a
 .btn-primary:hover, .btn-primary:focus {
 
 }
-.btn.rsvp {
+.rsvp {
+  width: 110px;
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: var(--sapphire);
-  color: var(--sunflower);
+  transition: 350ms ease-in-out;
 }
-.btn.rsvp:hover, .btn.rsvp:focus {
-
+.rsvp img {
+  width: 100%;
+}
+.rsvp:hover, .rsvp:focus {
+  width: 130px;
+  right: 10px;
+  top: 15px;
 }
 .btn-outline-primary {
   border: 2px solid var(--primary);
@@ -1065,8 +1070,4 @@ textarea:focus, #access-form input[type="password"]:focus {
 .seal {
   height: 50vh;
   width: auto;
-}
-
-.blxCBd {
-  display: none;
 }
