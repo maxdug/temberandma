@@ -4,7 +4,13 @@ title: Tember and Max Wedding
 description: Resources for Tember and Max's Wedding
 section: Home
 ---
+<script>
+  document.getElementById("mbl-nav").addEventListener("click", myFunction);
 
+function myFunction() {
+  document.getElementById("burger-check").checked = false;
+}
+</script>
 <!-- <nav id="myID" class="nav"> -->
 <nav class="desktop">
   <a href="#schedule"><img src="/images/nav-schedule.svg" alt="Schedule"></a>
@@ -17,13 +23,13 @@ section: Home
 
 <input class="burger-check" id="burger-check" type="checkbox">
 <label for="burger-check" class="burger"></label>
-<nav class="mobile">
-  <a href="#schedule"><img src="/images/nav-schedule.png" alt="Schedule"></a>
-  <a href="#travel"><img src="/images/nav-travel.png" alt="Travel"></a>
-  <a href="#hotels"><img src="/images/nav-hotels.png" alt="Hotels"></a>
-  <a href="#photos"><img src="/images/nav-photos.png" alt="Photos"></a>
-  <a href="#registry"><img src="/images/nav-registry.png" alt="Registry"></a>
-  <a href="#rsvp"><img src="/images/nav-rsvp.png" alt="RSVP"></a>
+<nav id="mobile-menu" class="mobile">
+  <a href="#schedule" onclick="myFunction()"><img src="/images/nav-schedule.png" alt="Schedule"></a>
+  <a href="#travel" onclick="myFunction()"><img src="/images/nav-travel.png" alt="Travel"></a>
+  <a id="mbl-nav" href="#hotels" onclick="myFunction()"><img src="/images/nav-hotels.png" alt="Hotels"></a>
+  <a id="mbl-nav" href="#photos" onclick="myFunction()"><img src="/images/nav-photos.png" alt="Photos"></a>
+  <a id="mbl-nav" href="#registry" onclick="myFunction()"><img src="/images/nav-registry.png" alt="Registry"></a>
+  <a id="mbl-nav" href="#rsvp" onclick="myFunction()"><img src="/images/nav-rsvp.png" alt="RSVP"></a>
 </nav>
 
 <section id="top" class="jungle" style="height: 70vh;">
