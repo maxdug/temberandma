@@ -989,6 +989,9 @@ body.touch .tile img.tile-logo {
   display: none;
 }
 
+#travel .third img {
+    max-width: 180px;
+}
 
 /*
          db     dP""b8  dP""b8 888888 .dP"Y8 .dP"Y8
