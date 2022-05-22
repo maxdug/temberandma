@@ -250,10 +250,10 @@ max-height: 80px;
 }
 h3, h3 a {
   width: 100%;
-  font-size: clamp(.9rem,3.2vw,1.1rem);
+  font-size: clamp(.8rem,3.2vw,.9rem);
   margin: 1.4em 0 .3em;
   color: var(--sage);
-  font-weight: 300;
+  font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
 }
