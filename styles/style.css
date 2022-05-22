@@ -995,6 +995,13 @@ body.touch .tile img.tile-logo {
     width: 60%;
 }
 
+.rsvp-box {
+  overflow: hidden;
+}
+.rsvp-iframe {
+  margin-top: -181px;
+  width: inherit;
+}
 /*
          db     dP""b8  dP""b8 888888 .dP"Y8 .dP"Y8
         dPYb   dP   `" dP   `" 88__   `Ybo." `Ybo."
