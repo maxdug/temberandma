@@ -250,7 +250,7 @@ max-height: 80px;
 }
 h3, h3 a {
   width: 100%;
-  font-size: clamp(.8rem,3.2vw,.9rem);
+  font-size: clamp(.9rem,3.2vw,1.1rem);
   margin: 1.4em 0 .3em;
   color: var(--sage);
   font-weight: 400;
@@ -1106,4 +1106,11 @@ textarea:focus, #access-form input[type="password"]:focus {
   max-height: 60vh;
   width: auto;
   max-width: 90vw;
+}
+
+
+@media screen and (max-width: 767px) {
+  input, select, textarea {
+    font-size: 16px;
+  }
 }
