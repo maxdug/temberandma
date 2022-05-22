@@ -126,7 +126,6 @@ section {
   background-position: center;
   padding: 1rem 0;
   position: relative;
-  z-index: -2;
 }
 section.sunflower, .bottom-curve.sunflower {
   background: var(--sunflower) url(/images/sunflower-paper.jpg);
@@ -999,6 +998,7 @@ body.touch .tile img.tile-logo {
 .rsvp-box {
   overflow: hidden;
   width: 100%;
+  z-index: 2;
 }
 .rsvp-iframe {
   /* margin-top: -187px; */
@@ -1011,7 +1011,7 @@ body.touch .tile img.tile-logo {
   text-align: center;
   position: relative;
   bottom: -110px;
-  z-index: -1;
+  z-index: 1;
   margin-top: -40px;
 }
 
