@@ -253,7 +253,7 @@ h3, h3 a {
   font-size: clamp(.8rem,3.2vw,.9rem);
   margin: 1.4em 0 .3em;
   color: var(--sage);
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -293,6 +293,7 @@ a img {
 a {
   color: var(--sunflower);
   text-decoration: none;
+  font-weight: 400;
 }
 
 a:hover, a:focus {
@@ -991,6 +992,7 @@ body.touch .tile img.tile-logo {
 
 #travel .third img {
     max-width: 180px;
+    width: 60%;
 }
 
 /*
