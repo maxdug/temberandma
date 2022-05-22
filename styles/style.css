@@ -126,6 +126,7 @@ section {
   background-position: center;
   padding: 1rem 0;
   position: relative;
+  z-index: -2;
 }
 section.sunflower, .bottom-curve.sunflower {
   background: var(--sunflower) url(/images/sunflower-paper.jpg);
@@ -1005,6 +1006,15 @@ body.touch .tile img.tile-logo {
   width: inherit;
 }
 
+.hidden-thank-you {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  bottom: -110px;
+  z-index: -1;
+  margin-top: -40px;
+}
+
 /* ----- Mobile ----- */
 @media (max-width: 613px) {
   .rsvp-iframe {
@@ -1012,9 +1022,7 @@ body.touch .tile img.tile-logo {
     margin-top: -181px;
   }
 
-.hidden-thank-you {
-  
-}
+
 }/* End Media under 600px */
 /*
          db     dP""b8  dP""b8 888888 .dP"Y8 .dP"Y8
