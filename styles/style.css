@@ -124,7 +124,7 @@ section {
   justify-content: center;
   align-items: center;
   background-position: center;
-  padding: 4rem 0;
+  padding: 1rem 0;
   position: relative;
 }
 section.sunflower, .bottom-curve.sunflower {
@@ -403,7 +403,7 @@ button::after, [type="submit"]::after, [type="button"]::after, [type="reset"]::a
 
 }
 .rsvp {
-  width: 110px;
+  width: 130px;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -413,7 +413,7 @@ button::after, [type="submit"]::after, [type="button"]::after, [type="reset"]::a
   width: 100%;
 }
 .rsvp:hover, .rsvp:focus {
-  width: 130px;
+  width: 150px;
   right: 10px;
   top: 15px;
 }
@@ -1072,6 +1072,6 @@ textarea:focus, #access-form input[type="password"]:focus {
 }
 
 .seal {
-  height: 50vh;
+  height: 60vh;
   width: auto;
 }
