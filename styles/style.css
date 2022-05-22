@@ -997,17 +997,16 @@ body.touch .tile img.tile-logo {
 
 .rsvp-box {
   overflow: hidden;
-  width: 100%;
+  width: 375px;
   z-index: 2;
 }
 .rsvp-iframe {
-  /* margin-top: -187px; */
-  margin-top: -175px;
+  margin-top: -206px;
   width: inherit;
 }
 
 .hidden-thank-you {
-  width: 100%;
+  width: 375px;
   text-align: center;
   position: relative;
   bottom: -110px;
@@ -1018,8 +1017,7 @@ body.touch .tile img.tile-logo {
 /* ----- Mobile ----- */
 @media (max-width: 613px) {
   .rsvp-iframe {
-    /* margin-top: -217px; */
-    margin-top: -181px;
+    /* margin-top: -181px; */
   }
 
 
