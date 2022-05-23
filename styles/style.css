@@ -997,27 +997,27 @@ body.touch .tile img.tile-logo {
 
 .rsvp-box {
   overflow: hidden;
-  width: 375px;
+  width: clamp(375px, 60vw, 745px);
   z-index: 2;
 }
 .rsvp-iframe {
-  margin-top: -217px;
+  margin-top: -200px;
   width: inherit;
 }
 
 .hidden-thank-you {
-  width: 370px;
+  width: clamp(337px, 54vw, 735px);
   text-align: center;
   position: relative;
-  bottom: -110px;
+  bottom: -96px;
   z-index: 1;
-  margin-top: -40px;
+  margin-top: -50px;
 }
 
 /* ----- Mobile ----- */
 @media (max-width: 613px) {
   .rsvp-iframe {
-    /* margin-top: -181px; */
+    margin-top: -217px;
   }
 
 
