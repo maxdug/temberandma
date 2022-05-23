@@ -1011,17 +1011,15 @@ body.touch .tile img.tile-logo {
   position: relative;
   bottom: -96px;
   z-index: 1;
-  margin-top: -50px;
+  margin: -50px 1% 0;
 }
 
 /* ----- Mobile ----- */
-@media (max-width: 613px) {
+@media (max-width: 756px) {
   .rsvp-iframe {
     margin-top: -217px;
   }
-
-
-}/* End Media under 600px */
+}/* End Media Query */
 /*
          db     dP""b8  dP""b8 888888 .dP"Y8 .dP"Y8
         dPYb   dP   `" dP   `" 88__   `Ybo." `Ybo."
