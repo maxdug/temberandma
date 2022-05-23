@@ -4,8 +4,35 @@ title: Tember and Max Wedding
 description: Resources for Tember and Max's Wedding
 section: Home
 ---
+<script>
+document.getElementById("mbl-nav").addEventListener("click", myFunction);
 
-<section id="top" class="jungle" style="height: 70vh;">
+function myFunction() {
+  document.getElementById("burger-check").checked = false;
+}
+</script>
+<!-- <nav id="myID" class="nav"> -->
+<nav class="desktop">
+  <a href="#schedule"><img src="/images/nav-schedule.svg" alt="Schedule"></a>
+  <a href="#travel"><img src="/images/nav-travel.svg" style="max-height: 40px;" alt="Travel"></a>
+  <a href="#hotels"><img src="/images/nav-hotels.svg" alt="Hotels"></a>
+  <a href="#photos"><img src="/images/nav-photos.svg" alt="Photos"></a>
+  <a href="#registry"><img src="/images/nav-registry.svg" style="max-height: 50px;" alt="Registry"></a>
+  <a href="#rsvp"><img src="/images/nav-rsvp.svg" alt="RSVP"></a>
+</nav>
+
+<input class="burger-check" id="burger-check" type="checkbox">
+<label for="burger-check" class="burger"></label>
+<nav id="mobile-menu" class="mobile">
+  <a id="mbl-nav" href="#schedule" onclick="myFunction()"><img src="/images/nav-schedule.svg" alt="Schedule"></a>
+  <a id="mbl-nav" href="#travel" onclick="myFunction()"><img src="/images/nav-travel.svg" alt="Travel"></a>
+  <a id="mbl-nav" href="#hotels" onclick="myFunction()"><img src="/images/nav-hotels.svg" alt="Hotels"></a>
+  <a id="mbl-nav" href="#photos" onclick="myFunction()"><img src="/images/nav-photos.svg" alt="Photos"></a>
+  <a id="mbl-nav" href="#registry" onclick="myFunction()"><img src="/images/nav-registry.svg" alt="Registry"></a>
+  <a id="mbl-nav" href="#rsvp" onclick="myFunction()"><img src="/images/nav-rsvp.svg" alt="RSVP"></a>
+</nav>
+
+<section id="top" class="jungle" style="max-height: 80vh;">
   <div class="article">
       <div class="half">
         <img class="seal" src="/images/seal.png" alt="">
@@ -13,14 +40,296 @@ section: Home
   </div>
   <div class="article">
     <img src="/images/tember-max.svg" style="max-width: 300px;" alt="Tember & max">
-    <h1>
-      #hop2dug
-    </h1>
+    <br/><br/>
+    <img src="/images/hoptodug.svg" style="max-width: 140px; margin: 0 calc(500% - 140px);" alt="#hop2dug">
   </div>
+      	<a class="rsvp" href="#rsvp"><img src="/images/rsvp.png"></a>
+
 
 </section><!-- End Top -->
 <div class="bottom-curve jungle"> </div>
 
 <section id="schedule" class="navy">
+  <div class="article">
+      <h2><img src="/images/nav-schedule.svg" alt="Schedule"></h2>
+  </div>
+  <div class="article container">
+    <div class="third">
+      <h3>
+        Friday, Sept 30th<br>
+        5-7pm
+      </h3>
+    </div>
+    <div class="two-thirds">
+      <h3>
+        Happy Hour
+      </h3>
+
+      <p>
+        Welcome to Key West! Stop by for a cocktail and mingle with family and friends ahead of the big day. Casual vacation attire is encouraged! 🌴
+      </p>
+    </div>
+  </div>
+
+    <div class="article container">
+      <div class="third">
+        <h3>
+          Saturday, Oct 1st<br>
+          5pm
+        </h3>
+      </div>
+      <div class="two-thirds">
+        <h3>
+          Wedding
+        </h3>
+
+        <p>
+          Dress code is semi-formal (suit & tie, cocktail dresses, and comfortable shoes for being outside) The ceremony will begin promptly at 5pm, so please plan to arrive 15-30 minutes before. Dinner and reception to follow!
+        </p>
+      </div>
+    </div>
+
+    <div class="article container">
+      <div class="third">
+        <h3>
+          Sunday, Oct 2nd<br>
+          9-11am
+        </h3>
+      </div>
+      <div class="two-thirds">
+        <h3>
+          Breakfast
+        </h3>
+
+        <p>
+          Join us for a casual coffee and light breakfast the day after the wedding.
+        </p>
+      </div>
+    </div>
+
+    <div class="article">
+      <p>
+        All of our events will be held outdoors in the private garden of Old Town Manor, at 511 Eaton St. The rest of the weekend is intentionally left open for you to enjoy exploring the Keys! Be sure to check out our Travel section for ideas.
+      </p>
+    </div>
+
+        <div class="fourth">
+          <p>&nbsp;</p>
+        </div><!-- End fourth -->
+        <div class="fourth">
+          <p>&nbsp;</p>
+        </div><!-- End fourth -->
+        <div class="fourth">
+          <p><img src="/images/suit.png" alt="Armadillo Illistration"></p>
+        </div><!-- End fourth -->
+        <div class="fourth">
+          <p>&nbsp;</p>
+        </div><!-- End fourth -->
 
 </section><!-- End Schedule -->
+<div class="bottom-curve navy"> </div>
+
+<section id="travel" class="jungle">
+  <div class="article">
+      <h2><img src="/images/nav-travel.svg" alt="Travel"></h2>
+  </div>
+  <div class="article">
+    <h3>Airports</h3>
+  </div>
+  <div class="article container">
+    <div class="half">
+      <img style="border-radius: 30px;" src="/images/airports-key-west.png" alt="">
+      <p><b>Key West International Airport (EYW)</b> is the closest airport. It is a 15 minute drive from Old Town Manor. There are taxis, Uber, and Lyft available to/from the airport.</p>
+    </div>
+
+    <div class="half">
+      <img style="border-radius: 30px;" src="/images/airports-miami.png" alt="">
+      <p><b>Miami International Airport (MIA)</b> and <b>Fort Lauderdale International Airport (FLL)</b> are both about 4 hours away. The drive down US-1 is very scenic with many bridges connecting the Keys. Consider this option if you plan to stay in the Keys for a longer trip.</p>
+    </div>
+  </div>
+  <div class="article">
+    <h3>Getting Around</h3>
+    <p>No need to rent a car. On this 4.2 square mile island, everything is within walking distance or just a short bike ride away!</p>
+    <h3>Parking</h3>
+    <p>If you do decide to drive, discounted passes to the city garage are offered for $15/day to Old Town Manor guests. The garage is about a 5-10 minute walk from the property. There is also metered street parking and other paid options in the neighborhood.</p>
+    <h3>Things To Do</h3>
+    <p>Here are our favorite things to do and see while in The Keys: </p>
+  </div>
+  <div class="article container">
+
+    <div class="third">
+      <img src="/images/travel-restraunts.png" alt="">
+      <h3>Restaurants</h3>
+      <p><b>Breakfast:</b> Banana Cafe, La Grignote, Cuban Coffee Queen<br>
+          <b>Lunch:</b> Garbo's, Moondog Cafe, Bad Boy Burrito<br>
+          <b>Dinner:</b> Blue Heaven, The Cafe, Bagatelle, Santiago's
+          </p>
+    </div>
+
+    <div class="third">
+      <img src="/images/travel-bars.png" alt="">
+      <h3>Bars</h3>
+      <p><b>Happy Hour:</b> Boat House Bar & Grill, Hank’s Hair of the Dog, Conch Republic<br>
+         <b>Cocktails:</b> General Horseplay, Tiki House, The Roost</p>
+    </div>
+
+    <div class="third">
+      <img src="/images/travel-smathers.png" alt="">
+      <h3>Smathers Beach</h3>
+      <p>Visit Key West’s largest public beach. It’s free to walk on or $5 to park.</p>
+      <p><a href="https://www.cityofkeywest-fl.gov/facilities/facility/details/Smathers-Beach-5" target="_blank">Visit Website</a></p>
+    </div>
+
+    <div class="third">
+      <img src="/images/travel-snorkling.png" alt="">
+      <h3>Snorkeling</h3>
+      <p>See colorful fish and the coral reef. There are several options for daily snorkeling tours and glass bottom boats out of Key West.</p>
+      <p><a href="https://www.keywesttravelguide.com/things-to-do-in-key-west/snorkel-trips/" target="_blank">Visit Website</a></p>
+    </div>
+
+    <div class="third">
+      <img src="/images/travel-sunset.png" alt="">
+      <h3>Sunset at Mallory Square</h3>
+      <p>Join the crowds at Mallory Square for a nightly sunset celebration with street vendors and entertainment.</p>
+      <p><a href="https://www.mallorysquare.com/" target="_blank">Visit Website</a></p>
+    </div>
+
+    <div class="third">
+      <img src="/images/travel-art.png" alt="">
+      <h3>Art Galleries & Shopping</h3>
+      <p>There are lots of <a href="https://www.keywesttravelguide.com/arts/galleries/" target="_blank">local artists</a> and <a href="https://www.mallorysquare.com/key-west-shopping/" target="_blank">quirky boutiques</a> to explore around town.</p>
+    </div>
+
+    <div class="third">
+      <img src="/images/travel-other-keys.png" alt="">
+      <h3>Explore Other Keys</h3>
+      <p>Just under an hour drive from Key West is <a href="https://bahiahondapark.com/" target="_blank">Bahia Honda</a>. The park has snorkeling and a nature trail with views from the old railroad bridge. Also about an hour away is the <a href="https://fws.gov/refuge/national-key-deer" target="_blank">Key Deer Refuge</a> where you can spot Key deer, coastal birds, and alligators!</p>
+    </div>
+
+    <div class="third">
+      <img src="/images/travel-museum.png" alt="">
+      <h3>Museums</h3>
+      <p>There are several wonderful museums in Key West. Meet some 6 toed cats at Ernest Hemmingway’s Home, climb the Key West Lighthouse, or learn about the Overseas Railway at the Sails To Rails Museum.</p>
+      <p><a href="https://www.keywesttravelguide.com/things-to-do-in-key-west/museums/" target="_blank">Visit Website</a></p>
+    </div>
+
+    <div class="third">
+      <img src="/images/travel-bike.png" alt="">
+      <h3>Biking</h3>
+      <p>One of the best ways to see the sights in Key West is on a bike. The island is very bike friendly with low speed limits for cars and numerous racks around town. </p>
+      <p><a href="https://www.colemanconcierge.com/biking-key-west/" target="_blank">Visit Website</a></p>
+    </div>
+
+  </div>
+</section><!-- End Travel -->
+<div class="bottom-curve jungle"> </div>
+
+<section id="hotels" class="navy">
+  <h2><img src="/images/nav-hotels.svg" alt="Hotels"></h2>
+  <div class="article container">
+    <div class="half">
+      <img style="max-width: 300px;" src="/images/hotels-otm.png" alt="">
+    </div>
+    <div style="align-content: center;" class="half">
+      <h3>Old Town Manor</h3>
+      <p>Old Town Manor is a historic bed and breakfast in the heart of Key West. Our wedding will be taking place in the private garden that the rooms overlook. Note: at this time, our guests have booked all of the rooms, so check out the options below.</p>
+    </div>
+  </div>
+
+    <div class="article container order-flip">
+      <div style="align-content: center;" class="half">
+        <h3>Airbnbs/VRBO</h3>
+        <p>Many affordable vacation properties are available to rent in the Keys via <a href="https://www.airbnb.com/s/Key-West--FL--United-States/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&flexible_trip_dates%5B%5D=february&flexible_trip_dates%5B%5D=january&flexible_trip_lengths%5B%5D=weekend_trip&date_picker_type=calendar&query=Key%20West%2C%20FL%2C%20United%20States&place_id=ChIJdyOVrTSx0YgRXjtGdy_pzj8&checkin=2022-09-30&checkout=2022-10-03&source=structured_search_input_header&search_type=autocomplete_click" target="_blank">airbnb.com</a> and <a href="http://vrbo.com/search/keywords:key-west-florida-united-states-of-america/arrival:2022-09-30/departure:2022-10-03?petIncluded=false" target="_blank">vrbo.com</a>. This option is ideal if you prefer to stay in a condo or house over a hotel. </p>
+      </div>
+      <div class="half">
+        <img style="max-width: 240px;" src="/images/airbnb.png" alt="">
+      </div>
+    </div>
+
+      <div class="article container">
+        <div class="half">
+          <img style="max-width: 280px;" src="/images/hotels.png" alt="">
+        </div>
+        <div style="align-content: center;" class="half">
+          <h3>Other Hotels</h3>
+          <p>There are several large brand hotels as well as boutique inns in Key West. Consider this option if you want to stay nearby with the amenities of a hotel.</p>
+        </div>
+      </div>
+
+</section><!-- End Hotels -->
+<div class="bottom-curve navy"> </div>
+
+<section id="photos" class="sunflower">
+  <h2><img src="/images/nav-photos.svg" alt="Photos"></h2>
+  <div class="article container">
+  <div style="min-height: 230px;" class="three-fourths container">
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/tucson-01.jpg); height: 94%;" href="/photos/tucson-01.png" title="Sunset among the saguaros in Tucson, AZ"></a>
+  </div>
+  <div class="fourth container">
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/02-grand-canyon-thumb.jpg);" href="/photos/02-grand-canyon.jpg" title="Sobo loved hiking the Rim Trail at the Grand Canyon. Strangers taking his picture? Not so much."></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/grand-canyon-2-thumb.jpg);" href="/photos/grand-canyon-2.jpg" title="She said yes! Grand Canyon, AZ 9.2.21"></a>
+  </div>
+  </div>
+  <div class="article container">
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/maine-01-thumb.jpg);" href="/photos/maine-01.jpg" title="Enjoying some time in Vacationland with Matthew & Caleb before embarking on the AT."></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/keys-01-thumb.jpg);" href="/photos/keys-01.jpg" title="Celebrating Thanksgiving- Florida Keys style!  "></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/mile-0-thumb.jpg);" href="/photos/mile-0.jpg" title="Infamous Mile 0 sign in Key West"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/bahia-honda-thumb.jpg);" href="/photos/bahia-honda.jpg" title="Bahia Honda is one of our favorite places in the Keys"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/san-antonio-02-thumb.jpg);" href="/photos/san-antonio-02.jpg" title="With Dad and Glenn in San Antonio, TX"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/palm-coast-thumb.jpg);" href="/photos/palm-coast.jpg" title="Fun fact: Max and Tember have the same birthday! In 2021, we got to celebrate it in Florida with family. "></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/baby-nugget-thumb.jpg);" href="/photos/baby-nugget.jpg" title="The day we brought home our bitey little baby Sobo!"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/astoria-01-thumb.jpg);" href="/photos/astoria-01.jpg" title="Ask Sobo to jump... and he’ll show you how high! "></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/shenandoah-thumb.jpg);" href="/photos/shenandoah.jpg" title="Well-worth-it view on a backpacking trip in Shenandoah, VA"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/springer-thumb.jpg);" href="/photos/springer.jpg" title="Almost there! Hiking to the terminus of the AT at Springer Mountain, GA"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/christmas-2020-thumb.jpg);" href="/photos/christmas-2020.jpg" title="Christmas 2020 with Donia and Joseph"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/cape-may-thumb.jpg);" href="/photos/cape-may.jpg" title="Exploring Cape May, NJ with Grandma and Mom"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/santa-fe-thumb.jpg);" href="/photos/santa-fe.jpg" title="Fun meet up with Glenn and Omi in Santa Fe, NM during our roadtrip"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/library-thumb.jpg);" href="/photos/library.jpg" title="The Library kids in Norman, OK"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/10k-thumb.jpg);" href="/photos/10k.jpg" title="Summer Lovin’ 10k on Governer’s Island, NYC"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/harry-potter-thumb.jpg);" href="/photos/harry-potter.jpg" title="Showing our house pride before seeing Harry Potter and the Cursed Child on Broadway"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/newyear-thumb.jpg);" href="/photos/newyear.jpg" title="New Years 2020 was a great start to a crazy year"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/kevin-wedding-01-thumb.jpg);" href="/photos/kevin-wedding-01.jpg" title="Max, Joe, and Dawson clean up nice!"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/kevin-wedding-02-thumb.jpg);" href="/photos/kevin-wedding-02.jpg" title="This trio has been friends since kindergarten!"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/friendsgiving-thumb.jpg);" href="/photos/friendsgiving.jpg" title="Friendsgiving is one of our favorite holidays!"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/marathon-thumb.jpg);" href="/photos/marathon.jpg" title="Cheering Donia and Joseph on at the NYC Marathon. Eric and Garann traveled in for the occasion!"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/camping-thumb.jpg);" href="/photos/camping.jpg" title="Max and Ashley cook up some mean campfire weenies"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/austin-thumb.jpg);" href="/photos/austin.jpg" title="All aboard the bat boat tour with Kim and Jonathan in Austin!"></a>
+      <a class="tile img-modal" rel="bcg" style="background-image: url(/photos/magnolia-thumb.jpg);" href="/photos/magnolia.jpg" title="The Silos in Waco,TX "></a>
+  </div>
+</section><!-- End Photos -->
+<div class="bottom-curve sunflower"> </div>
+
+<section id="registry" class="navy">
+  <div class="article">
+  <h2><img src="/images/nav-registry.svg" alt="Registry"></h2>
+  <p>The occasion of our wedding is a precious time to share with our family and friends. Many of you will travel long distances to celebrate with us, and this is more than enough! We request no gifts, but should you still wish to, you can view our registry lists below.</p>
+  </div><!-- End Article -->
+  <div class="article container">
+    <div class="third">
+      <a class="txt-lg" href="https://www.crateandbarrel.com/gift-registry/tember-hopkins-and-max-duggan/r6409546" target="_blank">Crate &amp; Barrel</a>
+    </div>
+    <div class="third">
+      <a class="txt-lg" href="https://goodneighborshop.com/apps/giftregistry/registry/202225" target="_blank">Good Neighbor</a>
+    </div>
+    <div class="third">
+      <a class="txt-lg" href="https://www.target.com/gift-registry/gift/temberandmax" target="_blank">Target</a>
+    </div>
+  </div><!-- End Article Container -->
+</section><!-- End Registry -->
+<div class="bottom-curve navy"> </div>
+
+<section id="rsvp" class="sage">
+  <div class="article">
+    <h2><img src="/images/nav-rsvp.svg" alt="RSVP"></h2>
+    <div class="hidden-thank-you"><h2>Thank you! We have received your response.</h2></div>
+    <div class="rsvp-box">
+    <iframe class="rsvp-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSd_VAUUxOrFvHbeDRpuxhcpQZrGIj3RDnwZQDEy3CXoTgqXWg/viewform?embedded=true" height="790" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe>
+    </div><!-- End RSVP Box -->
+  </div><!-- End Article -->
+    <div class="half">
+    </div><!-- End half -->
+    <div class="half">
+      <p><img src="/images/footprints.png" alt="Armadillo Illistration"></p>
+    </div><!-- End half -->
+
+</section><!-- End RSVP -->

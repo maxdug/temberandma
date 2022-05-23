@@ -997,7 +997,7 @@ body.touch .tile img.tile-logo {
 
 .rsvp-box {
   overflow: hidden;
-  width: clamp(375px, 60vw, 745px);
+  width: clamp(375px, 50vw, 745px);
   z-index: 2;
 }
 .rsvp-iframe {
@@ -1006,7 +1006,7 @@ body.touch .tile img.tile-logo {
 }
 
 .hidden-thank-you {
-  width: clamp(337px, 54vw, 735px);
+  width: clamp(337px, 44vw, 735px);
   text-align: center;
   position: relative;
   bottom: -96px;
