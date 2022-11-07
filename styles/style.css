@@ -1112,3 +1112,11 @@ textarea:focus, #access-form input[type="password"]:focus {
     font-size: 16px;
   }
 }
+
+.photo-hero {
+  display: block;
+  width: 100%;
+  margin: -17px -17px 20px -17px;
+  padding: 0;
+  height: 490px;
+}
