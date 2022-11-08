@@ -881,8 +881,8 @@ footer span:nth-child(3) {
   display: block;
   flex: 1 0 160px;
   min-width: calc(25% - 20px);
-  margin: 10px;
-  height: 160px;
+  margin: 3px;
+  height: 190px;
   background-size: cover;
   background-position: center;
 }
@@ -1116,7 +1116,7 @@ textarea:focus, #access-form input[type="password"]:focus {
 .photo-hero {
   display: block;
   width: 100%;
-  margin: -17px -17px 20px -17px;
+  margin: -16px -16px 20px -16px;
   padding: 0;
-  height: 490px;
+  height: clamp(230px,75vw,670px);
 }
